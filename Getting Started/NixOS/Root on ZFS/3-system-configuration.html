@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Configuration &mdash; OpenZFS  documentation</title><link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/mandoc.css" type="text/css" /><link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="openSUSE" href="../../openSUSE/index.html" />
+    <link rel="prev" title="System Installation" href="2-system-installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #29667e" >
+            <a href="../../../index.html"><img src="../../../_static/logo_main.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Alpine Linux/index.html">Alpine Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Arch Linux/index.html">Arch Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Debian/index.html">Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Fedora/index.html">Fedora</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../FreeBSD.html">FreeBSD</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://wiki.gentoo.org/wiki/ZFS">Gentoo</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NixOS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../index.html#contents">Contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#support">Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#installation">Installation</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#root-on-zfs">Root on ZFS</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="1-preparation.html">Preparation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="2-system-installation.html">System Installation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">System Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#contribute">Contribute</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../openSUSE/index.html">openSUSE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../RHEL-based distro/index.html">RHEL-based distro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Ubuntu/index.html">Ubuntu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Project and Community/index.html">Project and Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Developer Resources/index.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Performance and Tuning/index.html">Performance and Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Basic Concepts/index.html">Basic Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../man/index.html">Man Pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../msg/index.html">ZFS Messages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../License.html">License</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #29667e" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">OpenZFS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Getting Started</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">NixOS</a></li>
+          <li class="breadcrumb-item"><a href="../Root on ZFS.html">NixOS Root on ZFS</a></li>
+      <li class="breadcrumb-item active">System Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/openzfs/openzfs-docs/blob/master/docs/Getting Started/NixOS/Root on ZFS/3-system-configuration.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="system-configuration">
+<h1>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline"></a></h1>
+<ol class="arabic">
+<li><p>Disable cache, stale cache will prevent system from booting:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p /mnt/etc/zfs/
+rm -f /mnt/etc/zfs/zpool.cache
+touch /mnt/etc/zfs/zpool.cache
+chmod a-w /mnt/etc/zfs/zpool.cache
+chattr +i /mnt/etc/zfs/zpool.cache
+</pre></div>
+</div>
+</li>
+<li><p>Generate initial system configuration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nixos-generate-config --root /mnt
+</pre></div>
+</div>
+</li>
+<li><p>Import ZFS-specific configuration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s2">&quot;s|./hardware-configuration.nix|./hardware-configuration.nix ./zfs.nix|g&quot;</span> /mnt/etc/nixos/configuration.nix
+</pre></div>
+</div>
+</li>
+<li><p>Configure hostid:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tee -a /mnt/etc/nixos/zfs.nix <span class="s">&lt;&lt;EOF</span>
+<span class="s">{ config, pkgs, ... }:</span>
+
+<span class="s">{ boot.supportedFilesystems = [ &quot;zfs&quot; ];</span>
+<span class="s">  networking.hostId = &quot;$(head -c 8 /etc/machine-id)&quot;;</span>
+<span class="s">  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure bootloader for both legacy boot and UEFI boot and mirror bootloader:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;/boot.loader/d&#39;</span> /mnt/etc/nixos/configuration.nix
+sed -i <span class="s1">&#39;/services.xserver/d&#39;</span> /mnt/etc/nixos/configuration.nix
+tee -a /mnt/etc/nixos/zfs.nix <span class="s">&lt;&lt;-&#39;EOF&#39;</span>
+<span class="s">boot.loader.efi.efiSysMountPoint = &quot;/boot/efi&quot;;</span>
+<span class="s">boot.loader.efi.canTouchEfiVariables = false;</span>
+<span class="s">boot.loader.generationsDir.copyKernels = true;</span>
+<span class="s">boot.loader.grub.efiInstallAsRemovable = true;</span>
+<span class="s">boot.loader.grub.enable = true;</span>
+<span class="s">boot.loader.grub.version = 2;</span>
+<span class="s">boot.loader.grub.copyKernels = true;</span>
+<span class="s">boot.loader.grub.efiSupport = true;</span>
+<span class="s">boot.loader.grub.zfsSupport = true;</span>
+<span class="s">boot.loader.grub.extraPrepareConfig = &#39;&#39;</span>
+<span class="s">  mkdir -p /boot/efis</span>
+<span class="s">  for i in  /boot/efis/*; do mount $i ; done</span>
+
+<span class="s">  mkdir -p /boot/efi</span>
+<span class="s">  mount /boot/efi</span>
+<span class="s">&#39;&#39;;</span>
+<span class="s">boot.loader.grub.extraInstallCommands = &#39;&#39;</span>
+<span class="s">ESP_MIRROR=$(mktemp -d)</span>
+<span class="s">cp -r /boot/efi/EFI $ESP_MIRROR</span>
+<span class="s">for i in /boot/efis/*; do</span>
+<span class="s"> cp -r $ESP_MIRROR/EFI $i</span>
+<span class="s">done</span>
+<span class="s">rm -rf $ESP_MIRROR</span>
+<span class="s">&#39;&#39;;</span>
+<span class="s">boot.loader.grub.devices = [</span>
+<span class="s">EOF</span>
+
+<span class="k">for</span> i in <span class="nv">$DISK</span><span class="p">;</span> <span class="k">do</span>
+  <span class="nb">printf</span> <span class="s2">&quot;      \&quot;</span><span class="nv">$i</span><span class="s2">\&quot;\n&quot;</span> &gt;&gt;/mnt/etc/nixos/zfs.nix
+<span class="k">done</span>
+
+tee -a /mnt/etc/nixos/zfs.nix <span class="s">&lt;&lt;EOF</span>
+<span class="s">    ];</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</li>
+<li><p>Mount datasets with zfsutil option:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;s|fsType = &quot;zfs&quot;;|fsType = &quot;zfs&quot;; options = [ &quot;zfsutil&quot; &quot;X-mount.mkdir&quot; ];|g&#39;</span> <span class="se">\</span>
+/mnt/etc/nixos/hardware-configuration.nix
+</pre></div>
+</div>
+</li>
+<li><p>Set root password:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">rootPwd</span><span class="o">=</span><span class="k">$(</span>mkpasswd -m SHA-512 -s<span class="k">)</span>
+</pre></div>
+</div>
+<p>Declare password in configuration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>tee -a /mnt/etc/nixos/zfs.nix <span class="s">&lt;&lt;EOF</span>
+<span class="s">users.users.root.initialHashedPassword = &quot;${rootPwd}&quot;;</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install system and apply configuration:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>nixos-install -v --show-trace --no-root-passwd --root /mnt
+</pre></div>
+</div>
+</li>
+<li><p>Unmount filesystems:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>umount -Rl /mnt
+zpool <span class="nb">export</span> -a
+</pre></div>
+</div>
+</li>
+<li><p>Reboot:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>reboot
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="2-system-installation.html" class="btn btn-neutral float-left" title="System Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../openSUSE/index.html" class="btn btn-neutral float-right" title="openSUSE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, OpenZFS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
